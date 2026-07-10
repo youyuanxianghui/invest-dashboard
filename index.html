@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>投资仪表盘</title>
+<style>
+  :root {
+    --bg: #0a0e17; --card: #121827; --border: #1e293b;
+    --accent: #3b82f6; --green: #22c55e; --red: #ef4444; --orange: #f59e0b;
+    --text: #e2e8f0; --muted: #64748b;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; padding-bottom:50px; }
+  .header { border-bottom:1px solid var(--border); padding:14px 16px; background:var(--card); position:sticky; top:0; z-index:10; display:flex; align-items:center; justify-content:space-between; }
+  .header h1 { font-size:17px; font-weight:600; background:linear-gradient(135deg,var(--accent),#8b5cf6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .header-time { font-size:12px; color:var(--muted); }
+  .cont { padding:14px 12px; max-width:700px; margin:0 auto; }
+  .sec { font-size:14px; font-weight:600; margin:20px 0 10px; display:flex; align-items:center; gap:8px; }
+  .sec .bc { font-size:11px; background:var(--accent); color:#fff; padding:1px 8px; border-radius:8px; font-weight:400; }
+  .c { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px; margin-bottom:10px; }
+  .rw { display:flex; justify-content:space-between; align-items:center; }
+  .lb { font-size:12px; color:var(--muted); }
+  .vl { font-size:20px; font-weight:700; }
+  .sb { font-size:12px; margin-top:3px; }
+  .gn { color:var(--green); } .rd { color:var(--red); } .og { color:var(--orange); } .mu { color:var(--muted); }
+  .fi { padding:12px 14px; border-radius:10px; margin-bottom:8px; }
+  .fi.dc { background:rgba(34,197,94,0.08); border:1px solid rgba(34,197,94,0.2); }
+  .fi.pm { background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2); }
+  .fi.nm { background:var(--card); border:1px solid var(--border); }
+  .ft { display:flex; justify-content:space-between; align-items:center; }
+  .fn { font-weight:600; font-size:14px; }
+  .fc { font-size:11px; color:var(--muted); margin-left:5px; }
+  .ftag { font-size:10px; padding:1px 6px; border-radius:4px; margin-left:6px; vertical-align:middle; }
+  .ftag.qdii { background:rgba(59,130,246,0.12); color:var(--accent); }
+  .ftag.reit { background:rgba(245,158,11,0.12); color:var(--orange); }
+  .ftag.lof { background:rgba(100,116,139,0.12); color:var(--muted); }
+  .ff { display:flex; gap:16px; margin-top:8px; font-size:13px; flex-wrap:wrap; }
+  .fg { font-size:11px; padding:3px 10px; border-radius:6px; font-weight:600; }
+  .fg.dc { background:rgba(34,197,94,0.12); color:var(--green); }
+  .fg.pm { background:rgba(239,68,68,0.12); color:var(--red); }
+  .fg.mu { background:rgba(100,116,139,0.12); color:var(--muted); }
+  .cb { padding:14px; border-radius:10px; background:var(--card); border:1px solid var(--border); margin-bottom:8px; }
+  .cb-n { font-weight:600; font-size:14px; }
+  .cb-d { font-size:12px; color:var(--muted); margin-top:2px; line-height:1.5; }
+  .cb-t { font-size:11px; color:var(--muted); background:rgba(59,130,246,0.05); padding:8px; border-radius:6px; margin-top:8px; }
+  .ld { text-align:center; padding:24px; color:var(--muted); font-size:13px; }
+  .ftr { text-align:center; padding:16px; color:var(--muted); font-size:11px; margin-top:20px; }
+  .ct { font-size:12px; padding:2px 6px; border-radius:4px; }
+  .ct.r2 { background:rgba(239,68,68,0.08); color:var(--red); }
+  .ct.r1 { background:rgba(245,158,11,0.08); color:var(--orange); }
+  .ct.r0 { background:rgba(34,197,94,0.08); color:var(--green); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>📊 投资仪表盘</h1>
+  <span class="header-time" id="ht">加载中...</span>
+</div>
+
+<div class="cont">
+
+  <!-- 大盘 -->
+  <div class="sec">📈 上证指数</div>
+  <div class="c">
+    <div class="rw"><span class="lb">实时指数</span><span class="vl" id="ip">--</span></div>
+    <div class="rw" style="margin-top:4px;"><span class="sb" id="ic"></span><span class="sb mu" id="it"></span></div>
+  </div>
+
+  <!-- QDII 套利 -->
+  <div class="sec">🔥 QDII 套利机会 <span class="bc">折价买/溢价卖</span></div>
+  <div id="qdiiList"><div class="ld">加载中</div></div>
+
+  <!-- LOF 持仓 -->
+  <div class="sec">📋 LOF 持仓</div>
+  <div id="lofList"><div class="ld">加载中</div></div>
+
+  <!-- REIT -->
+  <div class="sec">🏗️ REIT 持仓</div>
+  <div id="reitList"><div class="ld">加载中</div></div>
+
+  <!-- 可转债 -->
+  <div class="sec">🎯 今日可转债申购</div>
+  <div class="cb">
+    <div class="cb-n">肇民转债 <span style="font-size:11px;color:var(--muted);font-weight:400;">申购 371000</span></div>
+    <div class="cb-d">正股：肇民科技 · 发行规模：5.9亿 · 转股价值：85.80 · 溢价率：16.55%</div>
+    <div class="cb-t">⏰ 9:30-15:00 · 顶格申购 · 无需预缴款</div>
+  </div>
+
+</div>
+
+<div class="ftr">数据：腾讯行情 · 天天基金 &nbsp;|&nbsp; 仅供参考</div>
+
+<script>
+// ===== 基金配置 =====
+var QDII = [
+  { code:'160644', name:'鹏华港美互联(LOF)', qdii:true },
+  { code:'162411', name:'华宝标普油气(QDII)', qdii:true },
+  { code:'501312', name:'海外科技LOF', qdii:true },
+];
+var LOF = [
+  { code:'501026', name:'财通福享混合LOF' },
+  { code:'501015', name:'财通升级混合LOF' },
+  { code:'164701', name:'黄金LOF' },
+];
+var REIT = [
+  { code:'508060', name:'南方万国数据中心REIT' },
+  { code:'180303', name:'华泰宝湾物流REIT' },
+];
+var ALL = [].concat(QDII, LOF, REIT);
+
+// ===== 数据存储 =====
+var navData = {};
+var priceData = {};
+var changeData = {};
+
+// ===== 天天基金 JSONP 回调 =====
+function jsonpgz(d) {
+  if (d && d.fundcode) navData[d.fundcode] = d;
+}
+
+// ===== 脚本加载 =====
+function inject(url, id) {
+  return new Promise(function(resolve) {
+    var old = document.getElementById(id);
+    if (old) old.remove();
+    var s = document.createElement('script');
+    s.id = id; s.src = url;
+    s.onload = resolve; s.onerror = resolve;
+    document.body.appendChild(s);
+    setTimeout(resolve, 5000);
+  });
+}
+
+// ===== 解析腾讯行情 =====
+function parseQQLines(text) {
+  var lines = text.split('\n');
+  lines.forEach(function(line) {
+    if (!line.trim()) return;
+    var m = line.match(/v_(s[hz]\d+)="([^"]+)"/);
+    if (m) {
+      var p = m[2].split('~');
+      var code = p[2];
+      if (!code) return;
+      priceData[code] = {
+        name: p[1], code: code,
+        price: parseFloat(p[3]),
+        change: parseFloat(p[31]),
+        changePct: parseFloat(p[32]),
+        time: p[30] || ''
+      };
+    }
+  });
+}
+
+// ===== 获取市场代码 =====
+function mkCode(code) {
+  if (code.startsWith('5') || code.startsWith('50')) return 'sh' + code;
+  return 'sz' + code;
+}
+
+// ===== 加载 =====
+async function load() {
+  document.getElementById('ht').textContent = '加载中...';
+
+  // 1. 上证指数
+  try {
+    var r = await fetch('https://qt.gtimg.cn/q=sh000001');
+    var t = await r.text();
+    var m = t.match(/v_sh000001="([^"]+)"/);
+    if (m) {
+      var p = m[1].split('~');
+      document.getElementById('ip').textContent = parseFloat(p[3]).toFixed(2);
+      var ch = parseFloat(p[31]), cp = p[32];
+      var c2 = ch >= 0 ? 'gn' : 'rd';
+      var a2 = ch >= 0 ? '▲' : '▼';
+      document.getElementById('ic').innerHTML = '<span class="' + c2 + '">' + a2 + ' ' + ch.toFixed(2) + ' (' + cp + '%)</span>';
+      document.getElementById('it').textContent = p[30] ? p[30].slice(0,4)+'-'+p[30].slice(4,6)+'-'+p[30].slice(6,11) : '';
+    }
+  } catch(e) { }
+
+  // 2. 加载所有基金实时价格
+  var qCodes = ALL.map(function(f) { return mkCode(f.code); }).join(',');
+  try {
+    var r2 = await fetch('https://qt.gtimg.cn/q=' + qCodes);
+    var t2 = await r2.text();
+    parseQQLines(t2);
+  } catch(e) { }
+
+  // 3. QDII + LOF 净值 (fundgz jsonp)
+  var navCodes = [].concat(QDII, LOF);
+  for (var i = 0; i < navCodes.length; i++) {
+    await inject('https://fundgz.1234567.com.cn/js/' + navCodes[i].code + '.js', 'nv_' + navCodes[i].code);
+    await sleep(200);
+  }
+
+  // 4. 渲染
+  renderQDII();
+  renderLOF();
+  renderREIT();
+  document.getElementById('ht').textContent = new Date().toLocaleTimeString('zh-CN', {hour12:false}) + ' ✓';
+}
+
+function sleep(ms) { return new Promise(function(r) { setTimeout(r, ms); }); }
+
+// ===== 渲染 QDII 套利 =====
+function renderQDII() {
+  var el = document.getElementById('qdiiList');
+  var html = '';
+  QDII.forEach(function(f) {
+    var pd = priceData[f.code];
+    var nd = navData[f.code];
+    var price = pd ? pd.price : NaN;
+    var nav = nd ? parseFloat(nd.gsz) : NaN;
+    var valid = !isNaN(price) && price > 0;
+
+    if (!valid) {
+      html += '<div class="fi nm"><div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag qdii">QDII</span></span><span class="mu">--</span></div></div>';
+      return;
+    }
+
+    var priceStr = price.toFixed(3);
+    var changeStr = '';
+    if (pd.change) {
+      var cls = pd.change >= 0 ? 'gn' : 'rd';
+      changeStr = ' <span class="' + cls + '">' + (pd.change >= 0 ? '+' : '') + pd.change.toFixed(2) + '%</span>';
+    }
+
+    if (isNaN(nav) || nav <= 0) {
+      html += '<div class="fi nm"><div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag qdii">QDII</span></span><span>' + priceStr + changeStr + '</span></div></div>';
+      return;
+    }
+
+    var premium = (price - nav) / nav;
+    var pctStr = (premium >= 0 ? '+' : '') + (premium * 100).toFixed(2) + '%';
+    var isSignal = Math.abs(premium) >= 0.03;
+    var cls2 = premium < 0 ? 'dc' : 'pm';
+    var tag = premium < 0 ? '折价' : '溢价';
+
+    var buyCost = price * 1.001;
+    var sellCost = nav * 1.001;
+    var redeemRate = 0.006;
+    var buyProfit = (nav * (1 - redeemRate) - buyCost) / buyCost;
+    var sellProfit = (price * 0.999 - sellCost) / sellCost;
+    var profit = premium < 0 ? buyProfit : sellProfit;
+    var action = premium < 0 ? '买入+赎回' : '申购+卖出';
+
+    var rc = isSignal ? cls2 : 'nm';
+
+    html += '<div class="fi ' + rc + '">';
+    html += '<div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag qdii">QDII</span></span>';
+    html += '<span class="fg ' + cls2 + '">' + tag + ' ' + pctStr + '</span></div>';
+    html += '<div class="ff">';
+    html += '<span>现价 <b>' + priceStr + '</b>' + changeStr + '</span>';
+    html += '<span>净值 <b>' + nav.toFixed(4) + '</b></span>';
+    html += '<span>预估 <span class="' + (profit >= 0 ? 'gn' : 'rd') + '">' + (profit * 100).toFixed(2) + '%</span></span>';
+    html += '</div>';
+    html += '<div style="font-size:11px;color:var(--muted);margin-top:6px;">操作: ' + action + '</div>';
+    html += '</div>';
+  });
+  el.innerHTML = html || '<div class="ld">暂无数据</div>';
+}
+
+// ===== 渲染 LOF =====
+function renderLOF() {
+  var el = document.getElementById('lofList');
+  var html = '';
+  LOF.forEach(function(f) {
+    var pd = priceData[f.code];
+    var nd = navData[f.code];
+    var price = pd ? pd.price : NaN;
+    var nav = nd ? parseFloat(nd.gsz) : NaN;
+    var valid = !isNaN(price) && price > 0;
+
+    if (!valid) {
+      html += '<div class="fi nm"><div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag lof">LOF</span></span><span class="mu">--</span></div></div>';
+      return;
+    }
+
+    var priceStr = price.toFixed(3);
+    var chText = '';
+    if (pd.change) {
+      var cls = pd.change >= 0 ? 'gn' : 'rd';
+      chText = ' <span class="' + cls + '">' + (pd.change >= 0 ? '+' : '') + pd.change.toFixed(2) + '%</span>';
+    }
+
+    var navStr = '';
+    var dpText = '';
+    if (!isNaN(nav) && nav > 0) {
+      navStr = '<span>净值 <b>' + nav.toFixed(4) + '</b></span>';
+      var dp = (price - nav) / nav * 100;
+      var dpCls = dp >= 0 ? 'rd' : 'gn';
+      dpText = ' <span class="' + dpCls + '">' + (dp >= 0 ? '+' : '') + dp.toFixed(2) + '%</span>';
+    }
+
+    html += '<div class="fi nm">';
+    html += '<div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag lof">LOF</span></span>';
+    html += '<span>' + priceStr + chText + '</span></div>';
+    html += '<div class="ff">';
+    html += navStr;
+    html += dpText ? '<span>折溢价 ' + dpText + '</span>' : '';
+    html += '</div></div>';
+  });
+  el.innerHTML = html || '<div class="ld">暂无数据</div>';
+}
+
+// ===== 渲染 REIT =====
+function renderREIT() {
+  var el = document.getElementById('reitList');
+  var html = '';
+  REIT.forEach(function(f) {
+    var pd = priceData[f.code];
+    var price = pd ? pd.price : NaN;
+    var valid = !isNaN(price) && price > 0;
+
+    if (!valid) {
+      html += '<div class="fi nm"><div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag reit">REIT</span></span><span class="mu">--</span></div></div>';
+      return;
+    }
+
+    var priceStr = price.toFixed(3);
+    var chText = '', chPct = 0;
+    if (pd.change) {
+      chPct = pd.change;
+      var cls = chPct >= 0 ? 'gn' : 'rd';
+      chText = ' <span class="' + cls + '">' + (chPct >= 0 ? '+' : '') + chPct.toFixed(2) + '%</span>';
+    }
+
+    html += '<div class="fi nm">';
+    html += '<div class="ft"><span class="fn">' + f.name + '<span class="fc">' + f.code + '</span><span class="ftag reit">REIT</span></span>';
+    html += '<span>' + priceStr + chText + '</span></div>';
+    html += '</div>';
+  });
+  el.innerHTML = html || '<div class="ld">暂无数据</div>';
+}
+
+// ===== 启动 =====
+window.addEventListener('DOMContentLoaded', load);
+</script>
+</body>
+</html>
