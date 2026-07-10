@@ -36,6 +36,8 @@
   /* arb summary */
   .sum { font-size:12px; color:var(--muted); margin:-2px 0 10px; }
   .sum b { color:var(--text); }
+  .grp-h { font-size:13px; font-weight:600; margin:14px 0 8px; color:var(--text); display:flex; align-items:center; gap:8px; }
+  .grp-c { font-size:11px; background:var(--border); color:var(--muted); padding:1px 8px; border-radius:8px; font-weight:400; }
   /* opportunity card */
   .opp { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:8px; }
   .opp-h { display:flex; align-items:center; gap:6px; flex-wrap:wrap; }
@@ -139,38 +141,49 @@ async function renderArb() {
     var r = await fetch('./data/arb.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error('http ' + r.status);
     var d = await r.json();
-    sum.innerHTML = '扫描 <b>' + (d.universe||0) + '</b> 只 · 机会 <b>' + (d.opportunities?d.opportunities.length:0)
-      + '</b> 个（溢价 ' + (d.summary?d.summary.premium:0) + ' / 折价 ' + (d.summary?d.summary.discount:0)
-      + ' / 封基折价 ' + (d.summary?d.summary.close:0) + '）&nbsp;·&nbsp;' + (d.updated||'');
     var list = d.opportunities || [];
+    var cnt = function(t){ return list.filter(function(o){return o.type===t;}).length; };
+    sum.innerHTML = '扫描 <b>' + (d.universe||0) + '</b> 只 · QDII机会 <b>' + cnt('qdii') + '</b> · LOF机会 <b>' + cnt('lof') + '</b> · 封基折价 <b>' + cnt('close') + '</b> &nbsp;·&nbsp; ' + (d.updated||'');
     if (!list.length) { el.innerHTML = '<div class="ld">今日无明显套利机会，保持关注 🔍</div>'; return; }
+    var groups = [
+      { key:'qdii', label:'🌐 QDII-LOF（跨境/原油/美股）' },
+      { key:'lof',  label:'📦 国内 LOF' },
+      { key:'close', label:'🔒 封闭/定开（分类）基金' }
+    ];
     var html = '';
-    list.forEach(function(o) {
-      var tagCls = o.type === 'qdii' ? 'qdii' : (o.type === 'close' ? 'close' : 'lof');
-      var tagTxt = o.type === 'qdii' ? 'QDII-LOF' : (o.type === 'close' ? '封闭' : 'LOF');
-      var dirCls = o.dir; // premium / discount / close
-      var dirTxt = o.dir === 'premium' ? '溢价·申购卖' : (o.dir === 'discount' ? '折价·买入赎' : '封基折价·持有');
-      var pctCls = o.dir === 'discount' ? 'dc' : 'pr';
-      var pctTxt = (o.premiumPct >= 0 ? '+' : '') + o.premiumPct.toFixed(2) + '%';
-      var spaceCls = o.space >= 0 ? 'gn' : 'rd';
-      var navDate = (o.navDate||'').slice(0,10);
-      var amt = o.amountWan != null ? (o.amountWan >= 10000 ? (o.amountWan/10000).toFixed(2)+'亿' : Math.round(o.amountWan)+'万') : '—';
-      html += '<div class="opp">'
-        + '<div class="opp-h"><span class="opp-n">' + o.name + '</span><span class="opp-c">' + o.code + '</span>'
-        + '<span class="tag ' + tagCls + '">' + tagTxt + '</span>'
-        + '<span class="dir ' + dirCls + '">' + dirTxt + '</span></div>'
-        + '<div class="opp-b">'
-        + '<div class="opp-pct ' + pctCls + '">' + pctTxt + '</div>'
-        + '<div class="opp-meta">'
-        + '现价 <b>' + (o.price!=null?o.price.toFixed(3):'—') + '</b> · 净值 <b>' + (o.nav!=null?o.nav.toFixed(4):'—') + '</b>(' + navDate + ')<br>'
-        + '预估空间 <b class="' + spaceCls + '">' + (o.space>=0?'+':'') + o.space.toFixed(2) + '%</b> · 成交 ' + amt + ' · 操作：' + o.action
-        + '</div></div></div>';
+    groups.forEach(function(g) {
+      var items = list.filter(function(o){ return o.type === g.key; });
+      if (!items.length) return;
+      html += '<div class="grp-h">' + g.label + ' <span class="grp-c">' + items.length + '</span></div>';
+      items.forEach(function(o){ html += oppCard(o); });
     });
     el.innerHTML = html;
   } catch (e) {
     sum.textContent = '';
     el.innerHTML = '<div class="ld">数据加载失败，稍后重试</div>';
   }
+}
+
+function oppCard(o) {
+  var tagCls = o.type === 'qdii' ? 'qdii' : (o.type === 'close' ? 'close' : 'lof');
+  var tagTxt = o.type === 'qdii' ? 'QDII-LOF' : (o.type === 'close' ? '封闭' : 'LOF');
+  var dirCls = o.dir;
+  var dirTxt = o.dir === 'premium' ? '溢价·申购卖' : (o.dir === 'discount' ? '折价·买入赎' : '封基折价·持有');
+  var pctCls = o.dir === 'discount' ? 'dc' : 'pr';
+  var pctTxt = (o.premiumPct >= 0 ? '+' : '') + o.premiumPct.toFixed(2) + '%';
+  var spaceCls = o.space >= 0 ? 'gn' : 'rd';
+  var navDate = (o.navDate||'').slice(0,10);
+  var amt = o.amountWan != null ? (o.amountWan >= 10000 ? (o.amountWan/10000).toFixed(2)+'亿' : Math.round(o.amountWan)+'万') : '—';
+  return '<div class="opp">'
+    + '<div class="opp-h"><span class="opp-n">' + o.name + '</span><span class="opp-c">' + o.code + '</span>'
+    + '<span class="tag ' + tagCls + '">' + tagTxt + '</span>'
+    + '<span class="dir ' + dirCls + '">' + dirTxt + '</span></div>'
+    + '<div class="opp-b">'
+    + '<div class="opp-pct ' + pctCls + '">' + pctTxt + '</div>'
+    + '<div class="opp-meta">'
+    + '现价 <b>' + (o.price!=null?o.price.toFixed(3):'—') + '</b> · 净值 <b>' + (o.nav!=null?o.nav.toFixed(4):'—') + '</b>(' + navDate + ')<br>'
+    + '预估空间 <b class="' + spaceCls + '">' + (o.space>=0?'+':'') + o.space.toFixed(2) + '%</b> · 成交 ' + amt + ' · 操作：' + o.action
+    + '</div></div></div>';
 }
 
 // ===== 逆回购（实时）=====
