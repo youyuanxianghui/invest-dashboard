@@ -80,17 +80,14 @@
   <div class="sec">🏗️ REIT 持仓</div>
   <div id="reitList"><div class="ld">加载中</div></div>
 
-  <!-- 可转债 -->
-  <div class="sec">🎯 今日可转债申购</div>
-  <div class="cb">
-    <div class="cb-n">肇民转债 <span style="font-size:11px;color:var(--muted);font-weight:400;">申购 371000</span></div>
-    <div class="cb-d">正股：肇民科技 · 发行规模：5.9亿 · 转股价值：85.80 · 溢价率：16.55%</div>
-    <div class="cb-t">⏰ 9:30-15:00 · 顶格申购 · 无需预缴款</div>
-  </div>
+  <!-- 待发可转债 -->
+  <div class="sec">🎯 待发可转债（打新）</div>
+  <div id="cbUpdated" class="lb" style="margin:-4px 0 8px;font-size:11px;"></div>
+  <div id="cbList"><div class="ld">加载中</div></div>
 
 </div>
 
-<div class="ftr">数据：腾讯行情 · 天天基金 &nbsp;|&nbsp; 仅供参考</div>
+<div class="ftr">数据：腾讯行情 · 天天基金 · 东方财富 &nbsp;|&nbsp; 仅供参考</div>
 
 <script>
 // ===== 基金配置 =====
@@ -199,6 +196,7 @@ async function load() {
   renderQDII();
   renderLOF();
   renderREIT();
+  renderCB();
   document.getElementById('ht').textContent = new Date().toLocaleTimeString('zh-CN', {hour12:false}) + ' ✓';
 }
 
@@ -333,6 +331,44 @@ function renderREIT() {
     html += '</div>';
   });
   el.innerHTML = html || '<div class="ld">暂无数据</div>';
+}
+
+
+// ===== 渲染 待发可转债（打新）=====
+async function renderCB() {
+  var el = document.getElementById('cbList');
+  try {
+    var r = await fetch('./data/cb_upcoming.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error('http ' + r.status);
+    var data = await r.json();
+    var list = (data && data.list) || [];
+    document.getElementById('cbUpdated').textContent = data.updated ? ('数据更新：' + data.updated) : '';
+    if (!list.length) {
+      el.innerHTML = '<div class="ld">近期无新债申购，保持关注 🎉</div>';
+      return;
+    }
+    var now = new Date();
+    var html = '';
+    list.forEach(function(b) {
+      var d = b.subDate ? new Date(b.subDate.replace(/-/g, '/')) : null;
+      var diff = d ? Math.round((d - now) / 86400000) : null;
+      var tag = '', tagCls = 'mu';
+      if (diff === 0) { tag = '今日申购'; tagCls = 'dc'; }
+      else if (diff > 0) { tag = '还有 ' + diff + ' 天'; tagCls = 'og'; }
+      else { tag = '已过申购日'; tagCls = 'mu'; }
+      html += '<div class="cb">'
+        + '<div class="cb-n">' + b.name
+        + ' <span style="font-size:11px;color:var(--muted);font-weight:400;">申购 ' + (b.code || '') + '</span>'
+        + ' <span class="fg ' + tagCls + '">' + tag + '</span></div>';
+      html += '<div class="cb-d">正股：' + (b.stock || '—') + ' · 发行规模：' + (b.scale || '—') + '亿 · 评级：' + (b.rating || '—')
+        + (b.value ? (' · 转股价值：' + b.value) : '') + '</div>';
+      html += '<div class="cb-t">📅 申购日：' + (b.subDate || '—').slice(0, 10) + ' · 顶格申购 · 无需预缴款</div>';
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  } catch (e) {
+    el.innerHTML = '<div class="ld">数据加载失败，稍后重试</div>';
+  }
 }
 
 // ===== 启动 =====
