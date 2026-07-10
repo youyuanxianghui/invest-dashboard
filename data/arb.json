@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10 16:28",
+  "updated": "2026-07-10 16:33",
   "source": "价格:腾讯行情; 净值:天天基金; 待发转债:东方财富",
   "universe": 40,
   "thresholds": {
@@ -13,32 +13,6 @@
     "high": false
   },
   "opportunities": [
-    {
-      "code": "164212",
-      "name": "天弘全球新能源汽车股票(QDII-LOF)A",
-      "type": "qdii",
-      "price": 1,
-      "nav": 2.1912,
-      "navDate": "2026-07-08",
-      "premiumPct": -54.36290617013508,
-      "dir": "discount",
-      "action": "买入+赎回",
-      "space": 53.562906170135086,
-      "amountWan": 0
-    },
-    {
-      "code": "164401",
-      "name": "前海开源中证健康产业指数",
-      "type": "lof",
-      "price": 1,
-      "nav": 0.7362,
-      "navDate": "2026-07-09",
-      "premiumPct": 35.83265417006249,
-      "dir": "premium",
-      "action": "申购+卖出",
-      "space": 33.83265417006249,
-      "amountWan": 0
-    },
     {
       "code": "501062",
       "name": "南方瑞合定开混合(LOF)",
@@ -170,32 +144,6 @@
       "amountWan": 6231
     },
     {
-      "code": "161811",
-      "name": "银华沪深300指数A",
-      "type": "lof",
-      "price": 1.085,
-      "nav": 1.1051,
-      "navDate": "2026-07-09",
-      "premiumPct": -1.8188399239887798,
-      "dir": "discount",
-      "action": "买入+赎回",
-      "space": 1.0188399239887798,
-      "amountWan": 0
-    },
-    {
-      "code": "160138",
-      "name": "南方恒生中国企业精明指数A",
-      "type": "lof",
-      "price": 1.115,
-      "nav": 1.1355,
-      "navDate": "2019-04-22",
-      "premiumPct": -1.8053720827829116,
-      "dir": "discount",
-      "action": "买入+赎回",
-      "space": 1.0053720827829116,
-      "amountWan": 0
-    },
-    {
       "code": "501050",
       "name": "华夏上证50AH优选指数A",
       "type": "lof",
@@ -275,9 +223,9 @@
     }
   ],
   "summary": {
-    "total": 20,
-    "premium": 3,
-    "discount": 15,
+    "total": 16,
+    "premium": 2,
+    "discount": 12,
     "close": 2
   }
 }
