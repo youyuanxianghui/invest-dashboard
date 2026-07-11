@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10 16:49",
+  "updated": "2026-07-11 08:08",
   "source": "价格:腾讯行情; 净值:天天基金; 待发转债:东方财富",
   "universe": 40,
   "thresholds": {
@@ -38,6 +38,19 @@
       "action": "封基折价·持有至封转开/到期",
       "space": 7.903100775193796,
       "amountWan": 1434
+    },
+    {
+      "code": "160644",
+      "name": "鹏华港美互联股票人民币",
+      "type": "qdii",
+      "price": 1.875,
+      "nav": 1.9362,
+      "navDate": "2026-07-09",
+      "premiumPct": -3.160830492717691,
+      "dir": "discount",
+      "action": "买入+赎回",
+      "space": 2.3608304927176906,
+      "amountWan": 17562
     },
     {
       "code": "163406",
@@ -79,19 +92,6 @@
       "amountWan": 36
     },
     {
-      "code": "162411",
-      "name": "华宝标普油气上游股票人民币A",
-      "type": "qdii",
-      "price": 0.84,
-      "nav": 0.8609,
-      "navDate": "2026-07-08",
-      "premiumPct": -2.4276919502845895,
-      "dir": "discount",
-      "action": "买入+赎回",
-      "space": 1.6276919502845895,
-      "amountWan": 4943
-    },
-    {
       "code": "161005",
       "name": "富国天惠成长混合(LOF)A",
       "type": "lof",
@@ -116,19 +116,6 @@
       "action": "买入+赎回",
       "space": 1.3296296296296417,
       "amountWan": 77
-    },
-    {
-      "code": "162719",
-      "name": "广发道琼斯石油指数人民币A",
-      "type": "qdii",
-      "price": 2.594,
-      "nav": 2.6483,
-      "navDate": "2026-07-08",
-      "premiumPct": -2.0503719367141193,
-      "dir": "discount",
-      "action": "买入+赎回",
-      "space": 1.2503719367141193,
-      "amountWan": 7995
     },
     {
       "code": "161725",
@@ -207,6 +194,19 @@
       "action": "买入+赎回",
       "space": 0.3503697617091217,
       "amountWan": 140
+    },
+    {
+      "code": "501312",
+      "name": "华宝海外科技股票(QDII-LOF)A",
+      "type": "qdii",
+      "price": 2.349,
+      "nav": 2.3746,
+      "navDate": "2026-07-09",
+      "premiumPct": -1.07807630758864,
+      "dir": "discount",
+      "action": "买入+赎回",
+      "space": 0.2780763075886399,
+      "amountWan": 5810
     },
     {
       "code": "502003",
