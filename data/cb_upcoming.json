@@ -1,7 +1,7 @@
 {
-  "updated": "2026-07-11 08:08",
+  "updated": "2026-07-13 11:09",
   "source": "东方财富",
-  "count": 1,
+  "count": 2,
   "list": [
     {
       "name": "江农转债",
@@ -10,6 +10,15 @@
       "subDate": "2026-07-14 00:00:00",
       "scale": 11.85,
       "rating": "AA+",
+      "value": ""
+    },
+    {
+      "name": "曙26转债",
+      "code": "754019",
+      "stock": "中科曙光",
+      "subDate": "2026-07-15 00:00:00",
+      "scale": 80,
+      "rating": "AAAsti",
       "value": ""
     }
   ]
