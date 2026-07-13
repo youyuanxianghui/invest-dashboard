@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-13 17:04",
+  "updated": "2026-07-13 17:12",
   "summary": {
-    "total": 0,
+    "total": 9,
     "premium": 0,
-    "discount": 0,
+    "discount": 9,
     "close": 0,
     "scanned": 8696
   },
@@ -11,5 +11,132 @@
     "gc001": 1.4,
     "r001": 1.39
   },
-  "opportunities": []
+  "opportunities": [
+    {
+      "code": "002429",
+      "name": "华安全球美元票息债C",
+      "type": "qdii",
+      "price": 9.54,
+      "nav": 11.33,
+      "navDate": "估算",
+      "premiumPct": -15.798764342453673,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 14.998764342453672,
+      "amountWan": 11.8827,
+      "time": "20260713161415"
+    },
+    {
+      "code": "002611",
+      "name": "博时黄金ETF联接C",
+      "type": "qdii",
+      "price": 16.43,
+      "nav": 19.04,
+      "navDate": "估算",
+      "premiumPct": -13.70798319327731,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 12.907983193277309,
+      "amountWan": 7.717,
+      "time": "20260713161415"
+    },
+    {
+      "code": "002230",
+      "name": "华夏大中华混合(QDII)",
+      "type": "qdii",
+      "price": 41.9,
+      "nav": 47.4,
+      "navDate": "估算",
+      "premiumPct": -11.60337552742616,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 10.803375527426159,
+      "amountWan": 20.3903,
+      "time": "20260713161418"
+    },
+    {
+      "code": "000988",
+      "name": "嘉实全球互联网股票人民币",
+      "type": "qdii",
+      "price": 154.24,
+      "nav": 173.88,
+      "navDate": "估算",
+      "premiumPct": -11.295146077754765,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 10.495146077754764,
+      "amountWan": 88.8464,
+      "time": "20260713161421"
+    },
+    {
+      "code": "513090",
+      "name": "香港证券ETF易方达",
+      "type": "qdii",
+      "price": 1.788,
+      "nav": 2.004,
+      "navDate": "估算",
+      "premiumPct": -10.778443113772454,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 9.978443113772453,
+      "amountWan": 56.6114,
+      "time": "20260713161452"
+    },
+    {
+      "code": "518800",
+      "name": "黄金ETF国泰",
+      "type": "qdii",
+      "price": 8.824,
+      "nav": 9.852,
+      "navDate": "估算",
+      "premiumPct": -10.434429557450269,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 9.634429557450268,
+      "amountWan": 6.103,
+      "time": "20260713161444"
+    },
+    {
+      "code": "518880",
+      "name": "黄金ETF华安",
+      "type": "qdii",
+      "price": 8.419,
+      "nav": 9.395,
+      "navDate": "估算",
+      "premiumPct": -10.388504523682801,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 9.5885045236828,
+      "amountWan": 25.5175,
+      "time": "20260713161458"
+    },
+    {
+      "code": "513350",
+      "name": "标普油气ETF富国",
+      "type": "qdii",
+      "price": 1.181,
+      "nav": 1.25,
+      "navDate": "估算",
+      "premiumPct": -5.519999999999996,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 4.719999999999996,
+      "amountWan": 24.8432,
+      "time": "20260713161452"
+    },
+    {
+      "code": "000990",
+      "name": "嘉实全球互联网股票美元现钞",
+      "type": "qdii",
+      "price": 9.26,
+      "nav": 9.63,
+      "navDate": "估算",
+      "premiumPct": -3.842159916926282,
+      "dir": "discount",
+      "action": "买入+场内赎回",
+      "space": 3.0421599169262823,
+      "amountWan": 8.7089,
+      "time": "20260713161412"
+    }
+  ]
 }
