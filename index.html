@@ -360,7 +360,9 @@ async function renderIndices() {
     const data = await r.json();
 
     // 分离 A股/期货 和 国际指数
-    const intlCodes = ['int_nasdaq','int_sp500','int_dji','int_ftse','usIXIC','usDJI','usNDX','hkHSI','hkHSCEI'];
+    const intlCodes = ['int_nasdaq','int_sp500','int_dji','int_ftse',
+                         'usIXIC','usDJI','usNDX','hkHSI','hkHSCEI',
+                         '.IXIC','.DJI','.NDX','.HSI','.HSCEI'];
     const intl = data.filter(idx => intlCodes.includes(idx.code) || intlCodes.includes(idx.name));
     const cn    = data.filter(idx => !intlCodes.includes(idx.code));
 
