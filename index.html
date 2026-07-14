@@ -156,6 +156,8 @@ body {
 .group-count { font-size: 11px; background: rgba(56,189,248,0.1); color: var(--accent); padding: 1px 7px; border-radius: 20px; font-weight: 500; }
 
 /* ===== 逆回购 ===== */
+.intl-card .idx-card { border-color: rgba(251,191,36,0.12); }
+.intl-card .idx-card:hover { border-color: rgba(251,191,36,0.3); background: rgba(251,191,36,0.05); }
 .repo-banner {
   background: linear-gradient(135deg, rgba(56,189,248,0.08), rgba(129,140,248,0.05));
   border: 1px solid rgba(56,189,248,0.2);
@@ -248,13 +250,27 @@ body {
 <!-- 主内容 -->
 <div class="wrap">
 
-  <!-- 大盘指数 -->
+  <!-- A股 + 期货 -->
   <div class="card mt-4 animate stagger-1">
     <div class="sec">
-      <div class="sec-title"><span class="sec-icon">📊</span> 大盘指数</div>
+      <div class="sec-title"><span class="sec-icon">🇨🇳</span> A股 · 期货</div>
       <div class="sec-badge" id="idxCount">—</div>
     </div>
     <div class="indices-grid" id="indicesGrid">
+      <div class="skeleton" style="height:80px;border-radius:10px;"></div>
+      <div class="skeleton" style="height:80px;border-radius:10px;"></div>
+      <div class="skeleton" style="height:80px;border-radius:10px;"></div>
+      <div class="skeleton" style="height:80px;border-radius:10px;"></div>
+    </div>
+  </div>
+
+  <!-- 全球市场 -->
+  <div class="card animate stagger-1">
+    <div class="sec">
+      <div class="sec-title"><span class="sec-icon">🌏</span> 全球市场</div>
+      <div class="sec-badge" style="background:rgba(251,191,36,0.1);color:var(--orange);border-color:rgba(251,191,36,0.2);" id="intlCount">—</div>
+    </div>
+    <div class="indices-grid" id="intlGrid">
       <div class="skeleton" style="height:80px;border-radius:10px;"></div>
       <div class="skeleton" style="height:80px;border-radius:10px;"></div>
       <div class="skeleton" style="height:80px;border-radius:10px;"></div>
@@ -337,25 +353,52 @@ async function load() {
 // ===== 大盘指数 =====
 async function renderIndices() {
   const el = $('indicesGrid');
+  const intlEl = $('intlGrid');
   try {
     const r = await fetch('./data/indices.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error('no data');
     const data = await r.json();
-    $('idxCount').textContent = data.length + ' 个';
-    if (!data.length) { el.innerHTML = '<div class="empty" style="grid-column:1/-1">暂无指数数据</div>'; return; }
-    el.innerHTML = data.map(idx => {
-      const c = parseFloat(idx.change);
-      const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
-      const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
-      return `<div class="idx-card">
-        <div class="idx-name">${idx.name}</div>
-        <div class="idx-price">${idx.price || '—'}</div>
-        <div class="idx-change ${cls}">${isNaN(c) ? '—' : sign + ' ' + idx.change + ' (' + idx.pct + ')'}</div>
-        ${idx.time ? `<div class="idx-time">${idx.time}</div>` : ''}
-      </div>`;
-    }).join('');
+
+    // 分离 A股/期货 和 国际指数
+    const intlCodes = ['int_nasdaq','int_sp500','int_dji','int_ftse','usIXIC','usDJI','usNDX','hkHSI','hkHSCEI'];
+    const intl = data.filter(idx => intlCodes.includes(idx.code) || intlCodes.includes(idx.name));
+    const cn    = data.filter(idx => !intlCodes.includes(idx.code));
+
+    $('idxCount').textContent = cn.length + ' 个';
+    $('intlCount').textContent = intl.length + ' 个';
+
+    if (!cn.length) { el.innerHTML = '<div class="empty" style="grid-column:1/-1">暂无A股数据</div>'; }
+    else {
+      el.innerHTML = cn.map(idx => {
+        const c = parseFloat(idx.change);
+        const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
+        const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
+        return `<div class="idx-card">
+          <div class="idx-name">${idx.name}</div>
+          <div class="idx-price">${idx.price || '—'}</div>
+          <div class="idx-change ${cls}">${isNaN(c) ? '—' : sign + ' ' + idx.change + ' (' + idx.pct + ')'}</div>
+          ${idx.time ? `<div class="idx-time">${idx.time}</div>` : ''}
+        </div>`;
+      }).join('');
+    }
+
+    if (!intl.length) { intlEl.innerHTML = '<div class="empty" style="grid-column:1/-1">暂无国际数据</div>'; }
+    else {
+      intlEl.innerHTML = intl.map(idx => {
+        const c = parseFloat(idx.change);
+        const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
+        const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
+        return `<div class="idx-card">
+          <div class="idx-name">${idx.name}</div>
+          <div class="idx-price">${idx.price || '—'}</div>
+          <div class="idx-change ${cls}">${isNaN(c) ? '—' : sign + ' ' + idx.change + ' (' + idx.pct + ')'}</div>
+          ${idx.time ? `<div class="idx-time">${idx.time}</div>` : ''}
+        </div>`;
+      }).join('');
+    }
   } catch (e) {
     el.innerHTML = '<div class="empty" style="grid-column:1/-1">指数加载失败</div>';
+    intlEl.innerHTML = '<div class="empty" style="grid-column:1/-1">—</div>';
   }
 }
 
