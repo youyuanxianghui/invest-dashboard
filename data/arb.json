@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-15 08:08",
+  "updated": "2026-07-15 08:37",
   "summary": {
-    "total": 105,
+    "total": 72,
     "premium": 0,
-    "discount": 105,
+    "discount": 72,
     "close": 0,
-    "scanned": 8696
+    "scanned": 8490
   },
   "repo": {
     "gc001": 1.385,
@@ -23,7 +23,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 15.83619744058501,
-      "amountWan": 0.0137,
+      "volume": 137,
       "time": "20260714161451"
     },
     {
@@ -37,7 +37,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 15.74929577464789,
-      "amountWan": 0.0161,
+      "volume": 161,
       "time": "20260714161421"
     },
     {
@@ -51,22 +51,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 15.154514128187458,
-      "amountWan": 0.011,
+      "volume": 110,
       "time": "20260714161415"
-    },
-    {
-      "code": "002611",
-      "name": "博时黄金ETF联接C",
-      "type": "qdii",
-      "price": 15.21,
-      "nav": 18.07,
-      "navDate": "估算",
-      "premiumPct": -15.827338129496399,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 15.027338129496398,
-      "amountWan": 8.8099,
-      "time": "20260714161433"
     },
     {
       "code": "160643",
@@ -79,7 +65,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 10.938484398216948,
-      "amountWan": 0.0112,
+      "volume": 112,
       "time": "20260714161409"
     },
     {
@@ -93,22 +79,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 10.539148281169835,
-      "amountWan": 0.1967,
+      "volume": 1967,
       "time": "20260714161421"
-    },
-    {
-      "code": "002963",
-      "name": "易方达黄金ETF联接C",
-      "type": "qdii",
-      "price": 17.87,
-      "nav": 20.15,
-      "navDate": "估算",
-      "premiumPct": -11.315136476426787,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 10.515136476426786,
-      "amountWan": 0.7582,
-      "time": "20260714161433"
     },
     {
       "code": "161024",
@@ -121,7 +93,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 10.476429130775248,
-      "amountWan": 0.0286,
+      "volume": 286,
       "time": "20260714161421"
     },
     {
@@ -135,7 +107,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 10.230413073082158,
-      "amountWan": 5.211,
+      "volume": 52110,
       "time": "20260714161412"
     },
     {
@@ -149,7 +121,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 9.853070080277725,
-      "amountWan": 18.3804,
+      "volume": 183804,
       "time": "20260714161424"
     },
     {
@@ -163,7 +135,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 9.307948969578012,
-      "amountWan": 5.5924,
+      "volume": 55924,
       "time": "20260714161418"
     },
     {
@@ -177,7 +149,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 9.2828729281768,
-      "amountWan": 1.4,
+      "volume": 14000,
       "time": "20260714161406"
     },
     {
@@ -191,78 +163,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 9.010874704491712,
-      "amountWan": 0.4814,
+      "volume": 4814,
       "time": "20260714161404"
-    },
-    {
-      "code": "513030",
-      "name": "德国ETF华安",
-      "type": "qdii",
-      "price": 1.766,
-      "nav": 1.958,
-      "navDate": "估算",
-      "premiumPct": -9.805924412665984,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 9.005924412665983,
-      "amountWan": 0.7007,
-      "time": "20260714161435"
-    },
-    {
-      "code": "518850",
-      "name": "黄金ETF华夏",
-      "type": "qdii",
-      "price": 8.452,
-      "nav": 9.354,
-      "navDate": "估算",
-      "premiumPct": -9.642933504383144,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.842933504383144,
-      "amountWan": 2.36,
-      "time": "20260714161451"
-    },
-    {
-      "code": "518660",
-      "name": "黄金ETF工银",
-      "type": "qdii",
-      "price": 8.397,
-      "nav": 9.29,
-      "navDate": "估算",
-      "premiumPct": -9.612486544671679,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.812486544671678,
-      "amountWan": 0.9334,
-      "time": "20260714161437"
-    },
-    {
-      "code": "518800",
-      "name": "黄金ETF国泰",
-      "type": "qdii",
-      "price": 8.775,
-      "nav": 9.706,
-      "navDate": "估算",
-      "premiumPct": -9.592004945394592,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.792004945394591,
-      "amountWan": 4.6063,
-      "time": "20260714161446"
-    },
-    {
-      "code": "518880",
-      "name": "黄金ETF华安",
-      "type": "qdii",
-      "price": 8.373,
-      "nav": 9.261,
-      "navDate": "估算",
-      "premiumPct": -9.588597343699384,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.788597343699383,
-      "amountWan": 19.7421,
-      "time": "20260714161455"
     },
     {
       "code": "002892",
@@ -275,22 +177,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.628284854563702,
-      "amountWan": 0.6041,
+      "volume": 6041,
       "time": "20260714161409"
-    },
-    {
-      "code": "513080",
-      "name": "法国ETF华安",
-      "type": "qdii",
-      "price": 1.725,
-      "nav": 1.903,
-      "navDate": "估算",
-      "premiumPct": -9.353652128218599,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.553652128218598,
-      "amountWan": 0.6618,
-      "time": "20260714161439"
     },
     {
       "code": "161119",
@@ -303,7 +191,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.341696292534289,
-      "amountWan": 0.0793,
+      "volume": 793,
       "time": "20260714161424"
     },
     {
@@ -317,7 +205,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.290909090909091,
-      "amountWan": 0.0193,
+      "volume": 193,
       "time": "20260714161418"
     },
     {
@@ -331,7 +219,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.28618899273105,
-      "amountWan": 0.0144,
+      "volume": 144,
       "time": "20260714161457"
     },
     {
@@ -345,7 +233,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.235812672176305,
-      "amountWan": 0.2239,
+      "volume": 2239,
       "time": "20260714161436"
     },
     {
@@ -359,36 +247,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.216672337529776,
-      "amountWan": 0.1124,
+      "volume": 1124,
       "time": "20260714161451"
-    },
-    {
-      "code": "513880",
-      "name": "日经225ETF华安",
-      "type": "qdii",
-      "price": 2.15,
-      "nav": 2.363,
-      "navDate": "估算",
-      "premiumPct": -9.013965298349559,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.213965298349558,
-      "amountWan": 4.4354,
-      "time": "20260714161440"
-    },
-    {
-      "code": "513300",
-      "name": "纳斯达克ETF华夏",
-      "type": "qdii",
-      "price": 2.66,
-      "nav": 2.918,
-      "navDate": "估算",
-      "premiumPct": -8.841672378341329,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 8.041672378341328,
-      "amountWan": 3.3193,
-      "time": "20260714161449"
     },
     {
       "code": "160632",
@@ -401,7 +261,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 8.023529411764713,
-      "amountWan": 0.0306,
+      "volume": 306,
       "time": "20260714161424"
     },
     {
@@ -415,22 +275,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.997127468581694,
-      "amountWan": 0.3176,
+      "volume": 3176,
       "time": "20260714161412"
-    },
-    {
-      "code": "513650",
-      "name": "标普500ETF南方",
-      "type": "qdii",
-      "price": 1.908,
-      "nav": 2.09,
-      "navDate": "估算",
-      "premiumPct": -8.708133971291863,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.908133971291863,
-      "amountWan": 4.5699,
-      "time": "20260714161432"
     },
     {
       "code": "501219",
@@ -443,22 +289,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.9003806416530695,
-      "amountWan": 0.0232,
+      "volume": 232,
       "time": "20260714161419"
-    },
-    {
-      "code": "513090",
-      "name": "香港证券ETF易方达",
-      "type": "qdii",
-      "price": 1.796,
-      "nav": 1.967,
-      "navDate": "估算",
-      "premiumPct": -8.693441789527201,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.893441789527201,
-      "amountWan": 56.3915,
-      "time": "20260714161455"
     },
     {
       "code": "161631",
@@ -471,7 +303,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.867419536984754,
-      "amountWan": 0.0254,
+      "volume": 254,
       "time": "20260714161433"
     },
     {
@@ -485,50 +317,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.83247863247863,
-      "amountWan": 0.0104,
+      "volume": 104,
       "time": "20260714161445"
-    },
-    {
-      "code": "513000",
-      "name": "日经225ETF易方达",
-      "type": "qdii",
-      "price": 2.346,
-      "nav": 2.564,
-      "navDate": "估算",
-      "premiumPct": -8.502340093603742,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.702340093603742,
-      "amountWan": 2.3435,
-      "time": "20260714161431"
-    },
-    {
-      "code": "513850",
-      "name": "美国50ETF易方达",
-      "type": "qdii",
-      "price": 1.765,
-      "nav": 1.928,
-      "navDate": "估算",
-      "premiumPct": -8.454356846473031,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.654356846473031,
-      "amountWan": 0.6783,
-      "time": "20260714161457"
-    },
-    {
-      "code": "513500",
-      "name": "标普500ETF博时",
-      "type": "qdii",
-      "price": 2.54,
-      "nav": 2.774,
-      "navDate": "估算",
-      "premiumPct": -8.435472242249459,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.635472242249459,
-      "amountWan": 4.7785,
-      "time": "20260714161438"
     },
     {
       "code": "000929",
@@ -541,7 +331,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.615300546448082,
-      "amountWan": 0.4052,
+      "volume": 4052,
       "time": "20260714161427"
     },
     {
@@ -555,22 +345,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.571040723981903,
-      "amountWan": 0.6125,
+      "volume": 6125,
       "time": "20260714161442"
-    },
-    {
-      "code": "562060",
-      "name": "标普A股红利ETF华宝",
-      "type": "qdii",
-      "price": 0.593,
-      "nav": 0.647,
-      "navDate": "估算",
-      "premiumPct": -8.346213292117472,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.546213292117472,
-      "amountWan": 0.4787,
-      "time": "20260714161455"
     },
     {
       "code": "002893",
@@ -583,22 +359,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.525074331020812,
-      "amountWan": 0.4691,
+      "volume": 4691,
       "time": "20260714161448"
-    },
-    {
-      "code": "513560",
-      "name": "香港科技ETF兴银",
-      "type": "qdii",
-      "price": 1.118,
-      "nav": 1.219,
-      "navDate": "估算",
-      "premiumPct": -8.285479901558652,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.485479901558652,
-      "amountWan": 1.0239,
-      "time": "20260714161436"
     },
     {
       "code": "002423",
@@ -611,7 +373,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.427848101265835,
-      "amountWan": 1.2289,
+      "volume": 12289,
       "time": "20260714161439"
     },
     {
@@ -625,22 +387,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.370914542728634,
-      "amountWan": 0.0111,
+      "volume": 111,
       "time": "20260714161424"
-    },
-    {
-      "code": "520560",
-      "name": "香港大盘30ETF华宝",
-      "type": "qdii",
-      "price": 0.798,
-      "nav": 0.869,
-      "navDate": "估算",
-      "premiumPct": -8.170310701956266,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.370310701956266,
-      "amountWan": 0.07,
-      "time": "20260714161455"
     },
     {
       "code": "002878",
@@ -653,22 +401,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.354859967051072,
-      "amountWan": 0.6982,
+      "volume": 6982,
       "time": "20260714161415"
-    },
-    {
-      "code": "513520",
-      "name": "日经ETF华夏",
-      "type": "qdii",
-      "price": 2.3,
-      "nav": 2.503,
-      "navDate": "估算",
-      "premiumPct": -8.110267678785469,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 7.310267678785469,
-      "amountWan": 5.1707,
-      "time": "20260714161457"
     },
     {
       "code": "000906",
@@ -681,7 +415,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.26174957118353,
-      "amountWan": 0.3755,
+      "volume": 3755,
       "time": "20260714161406"
     },
     {
@@ -695,7 +429,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.219375672766415,
-      "amountWan": 0.0405,
+      "volume": 405,
       "time": "20260714161415"
     },
     {
@@ -709,7 +443,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.216784452296811,
-      "amountWan": 0.3727,
+      "volume": 3727,
       "time": "20260714161429"
     },
     {
@@ -723,7 +457,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.1646017699115045,
-      "amountWan": 2.8071,
+      "volume": 28071,
       "time": "20260714161445"
     },
     {
@@ -737,7 +471,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.112732009117561,
-      "amountWan": 0.0496,
+      "volume": 496,
       "time": "20260714161436"
     },
     {
@@ -751,7 +485,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 7.0815679733110946,
-      "amountWan": 0.1584,
+      "volume": 1584,
       "time": "20260714161421"
     },
     {
@@ -765,7 +499,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.992887029288704,
-      "amountWan": 0.0627,
+      "volume": 627,
       "time": "20260714161445"
     },
     {
@@ -779,7 +513,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.9586206896551746,
-      "amountWan": 0.0434,
+      "volume": 434,
       "time": "20260714161406"
     },
     {
@@ -793,7 +527,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.830813953488365,
-      "amountWan": 0.4773,
+      "volume": 4773,
       "time": "20260714161457"
     },
     {
@@ -807,7 +541,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.8101468624833155,
-      "amountWan": 0.3532,
+      "volume": 3532,
       "time": "20260714161454"
     },
     {
@@ -821,7 +555,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.778558225508323,
-      "amountWan": 0.0314,
+      "volume": 314,
       "time": "20260714161407"
     },
     {
@@ -835,7 +569,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.754329078992751,
-      "amountWan": 0.0168,
+      "volume": 168,
       "time": "20260714161433"
     },
     {
@@ -849,7 +583,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.707638585770401,
-      "amountWan": 0.3008,
+      "volume": 3008,
       "time": "20260714161433"
     },
     {
@@ -863,7 +597,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.704215851602021,
-      "amountWan": 0.035,
+      "volume": 350,
       "time": "20260714161418"
     },
     {
@@ -877,7 +611,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.65098039215687,
-      "amountWan": 0.0816,
+      "volume": 816,
       "time": "20260714161448"
     },
     {
@@ -891,7 +625,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.631059506531199,
-      "amountWan": 0.0575,
+      "volume": 575,
       "time": "20260714161442"
     },
     {
@@ -905,7 +639,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.5463268365817155,
-      "amountWan": 0.0274,
+      "volume": 274,
       "time": "20260714161406"
     },
     {
@@ -919,7 +653,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.482184655396626,
-      "amountWan": 3.5461,
+      "volume": 35461,
       "time": "20260714161427"
     },
     {
@@ -933,7 +667,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.3364852809991135,
-      "amountWan": 0.015,
+      "volume": 150,
       "time": "20260714161410"
     },
     {
@@ -947,7 +681,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.3106659989985046,
-      "amountWan": 2.0536,
+      "volume": 20536,
       "time": "20260714161451"
     },
     {
@@ -961,7 +695,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.28502024291499,
-      "amountWan": 1.0888,
+      "volume": 10888,
       "time": "20260714161430"
     },
     {
@@ -975,7 +709,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.230067056024231,
-      "amountWan": 0.0122,
+      "volume": 122,
       "time": "20260714161439"
     },
     {
@@ -989,7 +723,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.213959822948586,
-      "amountWan": 0.0907,
+      "volume": 907,
       "time": "20260714161415"
     },
     {
@@ -1003,7 +737,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.211530071673429,
-      "amountWan": 1.8672,
+      "volume": 18672,
       "time": "20260714161424"
     },
     {
@@ -1017,7 +751,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.203891050583647,
-      "amountWan": 1.349,
+      "volume": 13490,
       "time": "20260714161421"
     },
     {
@@ -1031,7 +765,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.172111553784856,
-      "amountWan": 0.0183,
+      "volume": 183,
       "time": "20260714161442"
     },
     {
@@ -1045,7 +779,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.169696969696976,
-      "amountWan": 0.012,
+      "volume": 120,
       "time": "20260714161500"
     },
     {
@@ -1059,7 +793,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 6.036027713625873,
-      "amountWan": 0.1634,
+      "volume": 1634,
       "time": "20260714161417"
     },
     {
@@ -1073,7 +807,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.885236768802234,
-      "amountWan": 0.0531,
+      "volume": 531,
       "time": "20260714161500"
     },
     {
@@ -1087,7 +821,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.854991243432562,
-      "amountWan": 0.0233,
+      "volume": 233,
       "time": "20260714161418"
     },
     {
@@ -1101,7 +835,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.854343807763402,
-      "amountWan": 0.6849,
+      "volume": 6849,
       "time": "20260714161406"
     },
     {
@@ -1115,7 +849,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.829834254143652,
-      "amountWan": 0.0558,
+      "volume": 558,
       "time": "20260714161418"
     },
     {
@@ -1129,7 +863,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.7503227348792745,
-      "amountWan": 0.0116,
+      "volume": 116,
       "time": "20260714161436"
     },
     {
@@ -1143,7 +877,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.733575317604346,
-      "amountWan": 0.4188,
+      "volume": 4188,
       "time": "20260714161436"
     },
     {
@@ -1157,7 +891,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.690496059341684,
-      "amountWan": 0.0122,
+      "volume": 122,
       "time": "20260714161412"
     },
     {
@@ -1171,7 +905,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.682364156339368,
-      "amountWan": 8.2119,
+      "volume": 82119,
       "time": "20260714161436"
     },
     {
@@ -1185,7 +919,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.6449213161659495,
-      "amountWan": 0.4569,
+      "volume": 4569,
       "time": "20260714161500"
     },
     {
@@ -1199,7 +933,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.178260869565222,
-      "amountWan": 0.2016,
+      "volume": 2016,
       "time": "20260714161416"
     },
     {
@@ -1213,7 +947,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.16658711217183,
-      "amountWan": 0.0668,
+      "volume": 668,
       "time": "20260714161409"
     },
     {
@@ -1227,7 +961,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 5.096468974974279,
-      "amountWan": 0.2534,
+      "volume": 2534,
       "time": "20260714161418"
     },
     {
@@ -1241,7 +975,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 4.988046681598488,
-      "amountWan": 110.7234,
+      "volume": 1107234,
       "time": "20260714161415"
     },
     {
@@ -1255,7 +989,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 4.903211517165005,
-      "amountWan": 0.0147,
+      "volume": 147,
       "time": "20260714161416"
     },
     {
@@ -1269,7 +1003,7 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 4.676753349093767,
-      "amountWan": 0.0139,
+      "volume": 139,
       "time": "20260714161401"
     },
     {
@@ -1283,204 +1017,8 @@
       "dir": "discount",
       "action": "买入+场内赎回",
       "space": 4.658612975391494,
-      "amountWan": 0.0217,
+      "volume": 217,
       "time": "20260714161451"
-    },
-    {
-      "code": "517400",
-      "name": "黄金股ETF国泰",
-      "type": "qdii",
-      "price": 1.363,
-      "nav": 1.437,
-      "navDate": "估算",
-      "premiumPct": -5.149617258176761,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 4.349617258176761,
-      "amountWan": 0.47,
-      "time": "20260714161458"
-    },
-    {
-      "code": "160221",
-      "name": "��ɫ����LOF",
-      "type": "lof",
-      "price": 2.15,
-      "nav": 2.262,
-      "navDate": "估算",
-      "premiumPct": -4.951370468611852,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 4.151370468611852,
-      "amountWan": 0.0127,
-      "time": "20260714161451"
-    },
-    {
-      "code": "517520",
-      "name": "黄金股ETF永赢",
-      "type": "qdii",
-      "price": 1.736,
-      "nav": 1.825,
-      "navDate": "估算",
-      "premiumPct": -4.8767123287671215,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 4.076712328767122,
-      "amountWan": 11.3908,
-      "time": "20260714161433"
-    },
-    {
-      "code": "510170",
-      "name": "大宗商品ETF国联安",
-      "type": "qdii",
-      "price": 1.317,
-      "nav": 1.384,
-      "navDate": "估算",
-      "premiumPct": -4.841040462427743,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 4.041040462427743,
-      "amountWan": 0.5089,
-      "time": "20260714161448"
-    },
-    {
-      "code": "162719",
-      "name": "ʯ��LOF",
-      "type": "lof",
-      "price": 2.813,
-      "nav": 2.955,
-      "navDate": "估算",
-      "premiumPct": -4.805414551607442,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 4.005414551607442,
-      "amountWan": 5.6112,
-      "time": "20260714161433"
-    },
-    {
-      "code": "501079",
-      "name": "�ƴ����LOF",
-      "type": "lof",
-      "price": 5.358,
-      "nav": 5.627,
-      "navDate": "估算",
-      "premiumPct": -4.780522480895684,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.980522480895684,
-      "amountWan": 0.052,
-      "time": "20260714161417"
-    },
-    {
-      "code": "163412",
-      "name": "��ȫ���ʲ�LOF",
-      "type": "lof",
-      "price": 4.462,
-      "nav": 4.686,
-      "navDate": "估算",
-      "premiumPct": -4.780196329492108,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.9801963294921086,
-      "amountWan": 0.0134,
-      "time": "20260714161403"
-    },
-    {
-      "code": "501032",
-      "name": "��ͨ��ʢ���LOF",
-      "type": "lof",
-      "price": 1.98,
-      "nav": 2.074,
-      "navDate": "估算",
-      "premiumPct": -4.53230472516875,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.73230472516875,
-      "amountWan": 0.0157,
-      "time": "20260714161424"
-    },
-    {
-      "code": "501085",
-      "name": "��ͨ�ƴ�LOF",
-      "type": "lof",
-      "price": 3.383,
-      "nav": 3.543,
-      "navDate": "估算",
-      "premiumPct": -4.515946937623487,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.715946937623487,
-      "amountWan": 0.0407,
-      "time": "20260714161417"
-    },
-    {
-      "code": "000989",
-      "name": "嘉实全球互联网股票美元现汇",
-      "type": "qdii",
-      "price": 9.47,
-      "nav": 9.88,
-      "navDate": "估算",
-      "premiumPct": -4.149797570850203,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.3497975708502032,
-      "amountWan": 10.4945,
-      "time": "20260714161454"
-    },
-    {
-      "code": "501201",
-      "name": "�ƴ�����LOF",
-      "type": "lof",
-      "price": 3.052,
-      "nav": 3.177,
-      "navDate": "估算",
-      "premiumPct": -3.9345294302801386,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 3.1345294302801383,
-      "amountWan": 0.0954,
-      "time": "20260714161414"
-    },
-    {
-      "code": "501099",
-      "name": "ƽ�����˲�ҵLOF",
-      "type": "lof",
-      "price": 3.938,
-      "nav": 4.08,
-      "navDate": "估算",
-      "premiumPct": -3.4803921568627425,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 2.6803921568627427,
-      "amountWan": 0.0379,
-      "time": "20260714161424"
-    },
-    {
-      "code": "160324",
-      "name": "��������LOF",
-      "type": "lof",
-      "price": 3.579,
-      "nav": 3.707,
-      "navDate": "估算",
-      "premiumPct": -3.452926895063385,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 2.652926895063385,
-      "amountWan": 0.1159,
-      "time": "20260714161400"
-    },
-    {
-      "code": "002392",
-      "name": "华安全球美元收益债美元现汇A",
-      "type": "qdii",
-      "price": 7.3,
-      "nav": 7.55,
-      "navDate": "估算",
-      "premiumPct": -3.3112582781456954,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 2.5112582781456956,
-      "amountWan": 1.9504,
-      "time": "20260714161439"
     }
   ]
 }
