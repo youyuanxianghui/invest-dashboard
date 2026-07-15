@@ -360,9 +360,12 @@ async function renderIndices() {
     const data = await r.json();
 
     // 分离 A股/期货 和 国际指数
+    // KOSPI暂无直连API，手动查询
     const intlCodes = ['int_nasdaq','int_sp500','int_dji','int_ftse',
                          'usIXIC','usDJI','usNDX','hkHSI','hkHSCEI',
-                         '.IXIC','.DJI','.NDX','.HSI','.HSCEI'];
+                         '.IXIC','.DJI','.NDX','.HSI','.HSCEI',
+                         'int_nikkei',  // 日经225
+                         'krKOSPI'];    // 韩国KOSPI（暂无直连）
     const intl = data.filter(idx => intlCodes.includes(idx.code) || intlCodes.includes(idx.name));
     const cn    = data.filter(idx => !intlCodes.includes(idx.code));
 
@@ -390,11 +393,12 @@ async function renderIndices() {
         const c = parseFloat(idx.change);
         const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
         const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
+        const priceOk = idx.price && idx.price !== '—';
         return `<div class="idx-card">
-          <div class="idx-name">${idx.name}</div>
-          <div class="idx-price">${idx.price || '—'}</div>
-          <div class="idx-change ${cls}">${isNaN(c) ? '—' : sign + ' ' + idx.change + ' (' + idx.pct + ')'}</div>
-          ${idx.time ? `<div class="idx-time">${idx.time}</div>` : ''}
+          <div class="idx-name">${idx.name}${idx.code === 'krKOSPI' ? ' <span style="font-size:0.7em;opacity:0.5">(手动)</span>' : ''}</div>
+          <div class="idx-price">${priceOk ? idx.price : '<span style="opacity:0.4">—</span>'}</div>
+          <div class="idx-change ${cls}">${priceOk && !isNaN(c) ? sign + ' ' + idx.change + ' (' + idx.pct + ')' : (idx.note || '暂无直连')}</div>
+          ${idx.time && priceOk ? `<div class="idx-time">${idx.time}</div>` : ''}
         </div>`;
       }).join('');
     }
