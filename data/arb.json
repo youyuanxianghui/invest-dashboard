@@ -5,131 +5,92 @@
       "name": "全球芯片LOF",
       "type": "qdii",
       "price": 4.185,
-      "nav": 3.2771,
-      "navDate": "2026-07-13",
+      "nav": 3.3554,
+      "navDate": "2026-07-14",
       "navSource": "jisilu",
-      "premiumPct": 27.704372768606383,
+      "premiumPct": 24.724324968707148,
       "dir": "premium",
       "action": "申购+场内卖出",
-      "space": 25.704372768606383,
+      "space": 22.724324968707148,
       "volume": 55116,
-      "time": "20260715161425"
+      "time": "20260715 23441"
     },
     {
       "code": "161129",
       "name": "原油LOF易方达",
       "type": "qdii",
       "price": 1.85,
-      "nav": 1.5393,
-      "navDate": "2026-07-13",
+      "nav": 1.5886,
+      "navDate": "2026-07-14",
       "navSource": "jisilu",
-      "premiumPct": 20.184499447800963,
+      "premiumPct": 16.45474002266147,
       "dir": "premium",
       "action": "申购+场内卖出",
-      "space": 18.184499447800963,
+      "space": 14.454740022661468,
       "volume": 10719517,
-      "time": "20260715161415"
+      "time": "20260715 23441"
     },
     {
       "code": "501018",
       "name": "南方原油LOF",
       "type": "qdii",
       "price": 1.911,
-      "nav": 1.6134,
-      "navDate": "2026-07-13",
+      "nav": 1.6666,
+      "navDate": "2026-07-14",
       "navSource": "jisilu",
-      "premiumPct": 18.4455187802157,
+      "premiumPct": 14.664586583463334,
       "dir": "premium",
       "action": "申购+场内卖出",
-      "space": 16.4455187802157,
+      "space": 12.664586583463334,
       "volume": 8852895,
-      "time": "20260715161409"
+      "time": "20260715 23441"
     },
     {
       "code": "161226",
       "name": "国投白银LOF",
       "type": "lof",
       "price": 1.838,
-      "nav": 1.5973,
-      "navDate": "2026-07-14",
+      "nav": 1.6289,
+      "navDate": "2026-07-15",
       "navSource": "jisilu",
-      "premiumPct": 15.069179239967454,
+      "premiumPct": 12.836883786604462,
       "dir": "premium",
       "action": "申购+场内卖出",
-      "space": 13.069179239967454,
+      "space": 10.836883786604462,
       "volume": 868810,
-      "time": "20260715161418"
+      "time": "20260715 23441"
     },
     {
       "code": "160723",
       "name": "嘉实原油LOF",
       "type": "qdii",
       "price": 2.136,
-      "nav": 1.8574,
-      "navDate": "2026-07-13",
+      "nav": 1.9058,
+      "navDate": "2026-07-14",
       "navSource": "jisilu",
-      "premiumPct": 14.999461613007439,
+      "premiumPct": 12.07891699024033,
       "dir": "premium",
       "action": "申购+场内卖出",
-      "space": 12.999461613007439,
+      "space": 10.07891699024033,
       "volume": 8367766,
-      "time": "20260715161445"
-    },
-    {
-      "code": "501096",
-      "name": "国联安科创LOF",
-      "type": "lof",
-      "price": 1.866,
-      "nav": 2.0152,
-      "navDate": "2026-07-14",
-      "navSource": "jisilu",
-      "premiumPct": -7.4037316395395,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 6.6037316395395,
-      "volume": 94670,
-      "time": "20260715161416"
-    },
-    {
-      "code": "501200",
-      "name": "科创加银LOF",
-      "type": "lof",
-      "price": 1.607,
-      "nav": 1.7192,
-      "navDate": "2026-07-14",
-      "navSource": "jisilu",
-      "premiumPct": -6.526291298278274,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 5.726291298278274,
-      "volume": 22400,
-      "time": "20260715161414"
-    },
-    {
-      "code": "160324",
-      "name": "华夏磐晟LOF",
-      "type": "lof",
-      "price": 3.353,
-      "nav": 3.5738,
-      "navDate": "2026-07-14",
-      "navSource": "jisilu",
-      "premiumPct": -6.178297610386694,
-      "dir": "discount",
-      "action": "买入+场内赎回",
-      "space": 5.378297610386694,
-      "volume": 26323,
-      "time": "20260715161406"
+      "time": "20260715 23441"
     }
   ],
   "summary": {
-    "ts": "2026-07-15 19:40",
-    "total": 8,
+    "total": 5,
     "byType": {
       "qdii": 4,
-      "lof": 4
+      "lof": 1,
+      "close": 0
     },
-    "navSource": {
-      "jisilu": 8
-    }
+    "byDir": {
+      "premium": 5,
+      "discount": 0
+    },
+    "ts": "2026-07-15 23:44:13"
+  },
+  "repo": {
+    "gc001": 204001,
+    "r001": 131810
   }
 }
