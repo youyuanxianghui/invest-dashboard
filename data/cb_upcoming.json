@@ -1,25 +1,4 @@
 {
-  "updated": "2026-07-15 14:33",
-  "source": "东方财富",
-  "count": 2,
-  "list": [
-    {
-      "name": "曙26转债",
-      "code": "754019",
-      "stock": "中科曙光",
-      "subDate": "2026-07-15",
-      "scale": 80,
-      "rating": "AAAsti",
-      "value": ""
-    },
-    {
-      "name": "赛斯转债",
-      "code": "718480",
-      "stock": "赛恩斯",
-      "subDate": "2026-07-17",
-      "scale": 5.519,
-      "rating": "AA",
-      "value": ""
-    }
-  ]
+  "cb": [],
+  "ts": "2026-07-15 19:40"
 }
