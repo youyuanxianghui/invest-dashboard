@@ -1,17 +1,8 @@
 {
-  "updated": "2026-07-14 15:02",
+  "updated": "2026-07-15 08:08",
   "source": "东方财富",
   "count": 2,
   "list": [
-    {
-      "name": "江农转债",
-      "code": "733389",
-      "stock": "江山股份",
-      "subDate": "2026-07-14",
-      "scale": 11.85,
-      "rating": "AA+",
-      "value": ""
-    },
     {
       "name": "曙26转债",
       "code": "754019",
@@ -19,6 +10,15 @@
       "subDate": "2026-07-15",
       "scale": 80,
       "rating": "AAAsti",
+      "value": ""
+    },
+    {
+      "name": "赛斯转债",
+      "code": "718480",
+      "stock": "赛恩斯",
+      "subDate": "2026-07-17",
+      "scale": 5.519,
+      "rating": "AA",
       "value": ""
     }
   ]
