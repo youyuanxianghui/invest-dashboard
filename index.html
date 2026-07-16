@@ -350,58 +350,82 @@ async function load() {
   $('lastUpdate').textContent = new Date().toLocaleTimeString('zh-CN', { hour12: false }) + ' ✓';
 }
 
-// ===== 大盘指数 =====
+// ===== 大盘指数（直接从腾讯实时拉取） =====
 async function renderIndices() {
   const el = $('indicesGrid');
   const intlEl = $('intlGrid');
-  try {
-    const r = await fetch('./data/indices.json', { cache: 'no-cache' });
-    if (!r.ok) throw new Error('no data');
-    const data = await r.json();
 
-    // 分离 A股/期货 和 国际指数
-    // KOSPI暂无直连API，手动查询
-    const intlCodes = ['int_nasdaq','int_sp500','int_dji','int_ftse',
-                         'usIXIC','usDJI','usNDX','hkHSI','hkHSCEI',
-                         '.IXIC','.DJI','.NDX','.HSI','.HSCEI',
-                         'int_nikkei',  // 日经225
-                         'krKOSPI'];    // 韩国KOSPI（暂无直连）
-    const intl = data.filter(idx => intlCodes.includes(idx.code) || intlCodes.includes(idx.name));
-    const cn    = data.filter(idx => !intlCodes.includes(idx.code));
+  // 腾讯API代码（已验证有效）
+  // A股: sh000001=上证 sh000300=沪深300 sh000688=科创50 sz399001=深证 sz399006=创业板
+  // 国际: usIXIC=纳斯达克 usDJI=道琼斯 usNDX=纳指100 hkHSI=恒生 hkHSCEI=恒生国企
+  const codes = ['sh000001','sh000300','sh000688','sz399001','sz399006',
+                 'usIXIC','usDJI','usNDX','hkHSI','hkHSCEI'];
+  const nameMap = {
+    'sh000001': '上证指数', 'sh000300': '沪深300', 'sh000688': '科创50',
+    'sz399001': '深证成指', 'sz399006': '创业板指',
+    'usIXIC': '纳斯达克', 'usDJI': '道琼斯', 'usNDX': '纳指100',
+    'hkHSI': '恒生指数', 'hkHSCEI': '恒生国企'
+  };
+  const marketMap = {
+    'sh000001': 'A股','sh000300': 'A股','sh000688': 'A股',
+    'sz399001': 'A股','sz399006': 'A股',
+    'usIXIC': '美国','usDJI': '美国','usNDX': '美国',
+    'hkHSI': '香港','hkHSCEI': '香港'
+  };
+
+  try {
+    const r = await fetch('https://qt.gtimg.cn/q=' + codes.join(','));
+    const txt = await r.text();
+    const result = {};
+
+    txt.split('\n').forEach(line => {
+      const parts = line.split('~');
+      // 指数数据约50字段，price在index 3，change在index 32
+      if (parts.length > 3 && parseFloat(parts[3]) > 0) {
+        const raw = parts[0].replace(/"/g,'').replace('v_','');
+        // Extract bare code (remove sz/sh prefix and =xxx suffix)
+        let code = raw.replace(/^(sz|sh)/,'').replace(/=[^&]*/,'');
+        result[code] = {
+          price: parseFloat(parts[3]),
+          change: parts[32] || '',
+          name: nameMap[code] || code
+        };
+      }
+    });
+
+    const cn = [];
+    const intl = [];
+    Object.entries(result).forEach(([code, d]) => {
+      if (!d.price) return;
+      const change = parseFloat(d.change) || 0;
+      const pct = (change >= 0 ? '+' : '') + change.toFixed(2) + '%';
+      const item = { code, name: d.name, price: d.price.toLocaleString('en', {minimumFractionDigits: 2}), change: d.change, pct };
+      if (marketMap[code] === 'A股') cn.push(item);
+      else intl.push(item);
+    });
 
     $('idxCount').textContent = cn.length + ' 个';
     $('intlCount').textContent = intl.length + ' 个';
 
-    if (!cn.length) { el.innerHTML = '<div class="empty" style="grid-column:1/-1">暂无A股数据</div>'; }
-    else {
-      el.innerHTML = cn.map(idx => {
-        const c = parseFloat(idx.change);
-        const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
-        const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
-        return `<div class="idx-card">
-          <div class="idx-name">${idx.name}</div>
-          <div class="idx-price">${idx.price || '—'}</div>
-          <div class="idx-change ${cls}">${isNaN(c) ? '—' : sign + ' ' + idx.change + ' (' + idx.pct + ')'}</div>
-          ${idx.time ? `<div class="idx-time">${idx.time}</div>` : ''}
-        </div>`;
-      }).join('');
+    function idxCard(idx, isIntl) {
+      const c = parseFloat(idx.change) || 0;
+      const cls = c >= 0 ? 'up' : 'dn';
+      const sign = c >= 0 ? '▲' : '▼';
+      return `<div class="idx-card">
+        <div class="idx-name">${isIntl ? '🌏 ' : ''}${idx.name}</div>
+        <div class="idx-price">${idx.price}</div>
+        <div class="idx-change ${cls}">${sign} ${idx.change} (${idx.pct})</div>
+      </div>`;
     }
 
-    if (!intl.length) { intlEl.innerHTML = '<div class="empty" style="grid-column:1/-1">暂无国际数据</div>'; }
-    else {
-      intlEl.innerHTML = intl.map(idx => {
-        const c = parseFloat(idx.change);
-        const cls = isNaN(c) ? '' : (c >= 0 ? 'up' : 'dn');
-        const sign = isNaN(c) ? '' : (c >= 0 ? '▲' : '▼');
-        const priceOk = idx.price && idx.price !== '—';
-        return `<div class="idx-card">
-          <div class="idx-name">${idx.name}${idx.code === 'krKOSPI' ? ' <span style="font-size:0.7em;opacity:0.5">(手动)</span>' : ''}</div>
-          <div class="idx-price">${priceOk ? idx.price : '<span style="opacity:0.4">—</span>'}</div>
-          <div class="idx-change ${cls}">${priceOk && !isNaN(c) ? sign + ' ' + idx.change + ' (' + idx.pct + ')' : (idx.note || '暂无直连')}</div>
-          ${idx.time && priceOk ? `<div class="idx-time">${idx.time}</div>` : ''}
-        </div>`;
-      }).join('');
-    }
+    el.innerHTML = cn.length
+      ? cn.map(i => idxCard(i, false)).join('')
+      : '<div class="empty" style="grid-column:1/-1">暂无A股数据</div>';
+
+    intlEl.innerHTML = intl.length
+      ? intl.map(i => idxCard(i, true)).join('')
+      : '<div class="empty" style="grid-column:1/-1">暂无国际数据</div>';
+
   } catch (e) {
     el.innerHTML = '<div class="empty" style="grid-column:1/-1">指数加载失败</div>';
     intlEl.innerHTML = '<div class="empty" style="grid-column:1/-1">—</div>';
