@@ -529,26 +529,32 @@ function oppCard(o) {
 // ===== 逆回购实时(JS端补一次) =====
 async function renderRepoLive() {
   try {
-    const [g, c] = await Promise.all([
-      fetch('https://qt.gtimg.cn/q=sh204001'),
-      fetch('https://qt.gtimg.cn/q=sz131810')
-    ]);
-    const rOf = async t => {
-      const txt = await t.text();
-      const m = txt.match(/v_\w+="([^"]+)"/);
-      return m ? parseFloat(m[1].split('~')[3]) : null;
-    };
-    const gc = await rOf(g), r0 = await rOf(c);
-    if (gc == null) return;
-    $('repoGC').textContent = gc.toFixed(2) + '%';
-    $('repoR0').innerHTML   = r0 != null ? `<b style="color:var(--accent)">${r0.toFixed(2)}%</b>` : '—';
-    const high = gc >= REPO_HIGH || (r0 != null && r0 >= REPO_HIGH);
+    const r = await fetch('https://qt.gtimg.cn/q=sh204001,sz131810');
+    const txt = await r.text();
+    const rates = {};
+    txt.split('\n').forEach(line => {
+      if (!line || !line.includes('~')) return;
+      const parts = line.split('~');
+      if (parts.length < 4) return;
+      const rawKey = parts[0].replace(/"/g,'').replace('v_','');
+      const code = rawKey.replace(/=[^&]*/,'');
+      const price = parseFloat(parts[3]);
+      if (!price || price <= 0) return;
+      if (code === 'sh204001') rates.gc001 = price;
+      if (code === 'sz131810') rates.r001 = price;
+    });
+    if (rates.gc001 == null) return;
+    $('repoGC').textContent = rates.gc001.toFixed(2) + '%';
+    $('repoR0').innerHTML   = rates.r001 != null
+      ? `<b style="color:var(--accent)">${rates.r001.toFixed(2)}%</b>`
+      : '—';
+    const high = rates.gc001 >= REPO_HIGH || (rates.r001 != null && rates.r001 >= REPO_HIGH);
     const badge = $('repoBadge');
-    badge.textContent = high ? '⚠️ 利率走高' : '✓ 正常';
+    badge.textContent = high ? '⚠️ 利率偏高' : '✓ 正常';
     badge.className   = 'repo-badge ' + (high ? 'high' : 'normal');
     $('repoNote').textContent = high
-      ? '⚠️ GC001 > ' + REPO_HIGH + '%，可考虑参与逆回购'
-      : '利率正常，可观望';
+      ? '⚠️ GC001 > ' + REPO_HIGH + '%，闲置资金可考虑参与逆回购'
+      : '利率处于正常区间，可继续观望';
     const banner = $('repoBox').querySelector('.repo-banner');
     if (banner) banner.className = 'repo-banner' + (high ? ' high-alert' : '');
   } catch (e) {}
