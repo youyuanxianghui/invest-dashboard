@@ -384,9 +384,9 @@ async function renderIndices() {
       if (parts.length < 4) return;
       const price = parseFloat(parts[3]);
       if (!price || price <= 0) return;
-      // Extract code from raw key like "v_sh000001=" or "v_sz399006="
-      const raw = parts[0].replace(/"/g,'').replace('v_','');
-      const code = raw.replace(/^sz|^sh/,'').replace(/[=&].*/,'');
+      // 腾讯 raw key: "v_sh000001="1 → rawKey=sh000001=1 → code=sh000001（去=及后面内容，保留sh/sz前缀）
+      const rawKey = parts[0].replace(/"/g,'').replace('v_','');
+      const code = rawKey.replace(/=[^&]*/,'');
       if (!code || !nameMap[code]) return;
       result[code] = {
         price,
