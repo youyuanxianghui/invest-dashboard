@@ -1,1 +1,296 @@
-{"updated":"2026-07-16T02:27:16.145Z","threshold":5,"arb":[{"code":"501046","name":"财通福鑫定开混合","type":"封闭基金","price":13.079,"nav":10.1701,"navDate":"腾讯估算","navSource":"tencent81","premium":28.6,"volume":0,"updated":"10:27:16"},{"code":"501225","name":"全球芯片LOF","type":"QDII","price":4.185,"nav":3.3554,"navDate":"腾讯估算","navSource":"tencent81","premium":24.72,"volume":0,"updated":"10:27:16"},{"code":"161129","name":"原油LOF易方达","type":"LOF","price":1.85,"nav":1.5886,"navDate":"腾讯估算","navSource":"tencent81","premium":16.45,"volume":0,"updated":"10:27:16"},{"code":"501018","name":"南方原油LOF","type":"QDII","price":1.93,"nav":1.6666,"navDate":"腾讯估算","navSource":"tencent81","premium":15.8,"volume":2453301,"updated":"10:27:16"},{"code":"506008","name":"科创板长城","type":"封闭基金","price":1.273,"nav":1.4898,"navDate":"2026-07-15","navSource":"jisilu","premium":14.55,"volume":239100,"notes":"2年定开","maturity":"2027-11-04","annual_rt":11.16,"updated":"10:27:16"},{"code":"160723","name":"嘉实原油LOF","type":"LOF","price":2.153,"nav":1.9058,"navDate":"腾讯估算","navSource":"tencent81","premium":12.97,"volume":2611199,"updated":"10:27:16"},{"code":"161226","name":"国投白银LOF","type":"LOF","price":1.815,"nav":1.6289,"navDate":"腾讯估算","navSource":"tencent81","premium":11.42,"volume":340426,"updated":"10:27:16"},{"code":"501088","name":"嘉实瑞虹","type":"封闭基金","price":0.755,"nav":0.8261,"navDate":"2026-07-15","navSource":"jisilu","premium":8.61,"volume":0,"notes":"3年定开","maturity":"2028-10-25","annual_rt":3.78,"updated":"10:27:16"},{"code":"501070","name":"广发睿阳","type":"LOF","price":1.18,"nav":1.288,"navDate":"腾讯估算","navSource":"tencent81","premium":-8.39,"volume":827,"updated":"10:27:16"},{"code":"501093","name":"华夏翔阳LOF","type":"LOF","price":1.084,"nav":1.1793,"navDate":"腾讯估算","navSource":"tencent81","premium":-8.08,"volume":0,"updated":"10:27:16"},{"code":"160131","name":"南方聚利A","type":"LOF","price":1.12,"nav":1.039,"navDate":"腾讯估算","navSource":"tencent81","premium":7.8,"volume":0,"updated":"10:27:16"},{"code":"501062","name":"南方瑞合LOF","type":"LOF","price":2.117,"nav":2.2849,"navDate":"腾讯估算","navSource":"tencent81","premium":-7.35,"volume":4941,"updated":"10:27:16"},{"code":"501065","name":"经典成长","type":"LOF","price":1.225,"nav":1.3206,"navDate":"腾讯估算","navSource":"tencent81","premium":-7.24,"volume":0,"updated":"10:27:16"},{"code":"161914","name":"创业板2年定开","type":"封闭基金","price":0.871,"nav":0.9351,"navDate":"2026-07-15","navSource":"jisilu","premium":6.85,"volume":11400,"notes":"2年定开(9月10日)","maturity":"2026-09-10","annual_rt":44.68,"updated":"10:27:16"},{"code":"506000","name":"科创板基金","type":"封闭基金","price":1.314,"nav":1.4073,"navDate":"2026-07-15","navSource":"jisilu","premium":6.63,"volume":545500,"notes":"3年定开","maturity":"2026-08-25","annual_rt":60.5,"updated":"10:27:16"},{"code":"506006","name":"汇添富科创板","type":"封闭基金","price":1.435,"nav":1.5336,"navDate":"2026-07-15","navSource":"jisilu","premium":6.43,"volume":44900,"notes":"2年定开","maturity":"2026-08-24","annual_rt":60.17,"updated":"10:27:16"},{"code":"506003","name":"富国科创板","type":"封闭基金","price":1.332,"nav":1.4222,"navDate":"2026-07-15","navSource":"jisilu","premium":6.34,"volume":62900,"notes":"2年定开","maturity":"2026-08-24","annual_rt":59.36,"updated":"10:27:16"},{"code":"166025","name":"中欧远见定开","type":"封闭基金","price":0.652,"nav":0.6959,"navDate":"2026-07-15","navSource":"jisilu","premium":6.31,"volume":6500,"notes":"2年定开","maturity":"2027-04-24","annual_rt":8.17,"updated":"10:27:16"},{"code":"506001","name":"万家科创板","type":"封闭基金","price":1.86,"nav":1.9828,"navDate":"2026-07-15","navSource":"jisilu","premium":6.19,"volume":190000,"notes":"2年定开","maturity":"2026-09-01","annual_rt":48.1,"updated":"10:27:16"},{"code":"506005","name":"科创板博时","type":"封闭基金","price":1.681,"nav":1.7863,"navDate":"2026-07-15","navSource":"jisilu","premium":5.89,"volume":837100,"notes":"3年定开","maturity":"2026-08-10","annual_rt":86.07,"updated":"10:27:16"},{"code":"161040","name":"创业富国定开","type":"封闭基金","price":2.362,"nav":2.5027,"navDate":"2026-07-15","navSource":"jisilu","premium":5.62,"volume":191900,"notes":"2年定开","maturity":"2026-08-10","annual_rt":82.08,"updated":"10:27:16"},{"code":"506002","name":"易方达科创板","type":"封闭基金","price":2.292,"nav":2.4286,"navDate":"2026-07-15","navSource":"jisilu","premium":5.62,"volume":592600,"notes":"2年定开","maturity":"2026-09-25","annual_rt":28.92,"updated":"10:27:16"},{"code":"160325","name":"华夏创业板定开","type":"封闭基金","price":1.701,"nav":1.7953,"navDate":"2026-07-15","navSource":"jisilu","premium":5.25,"volume":10900,"notes":"2年定开","maturity":"2026-08-20","annual_rt":54.78,"updated":"10:27:16"},{"code":"161837","name":"银华大盘定开","type":"封闭基金","price":1.181,"nav":1.246,"navDate":"腾讯估算","navSource":"tencent81","premium":-5.22,"volume":1,"updated":"10:27:16"},{"code":"162720","name":"广发创业板定开","type":"封闭基金","price":1.374,"nav":1.4483,"navDate":"2026-07-15","navSource":"jisilu","premium":5.13,"volume":10200,"notes":"2年定开","maturity":"2026-10-29","annual_rt":17.83,"updated":"10:27:16"}],"stats":{"qdii":2,"lof":8,"cf":15,"total":25},"indices":[{"code":"sh000001","name":"上证指数","price":3932.38,"pct":0},{"code":"sh000300","name":"沪深300","price":4755.38,"pct":0},{"code":"sh000016","name":"上证50","price":2941.32,"pct":0},{"code":"sh000688","name":"科创50","price":1924.36,"pct":0},{"code":"sh000905","name":"中证500","price":8108.83,"pct":0}],"cb_upcoming":[]}
+{
+  "updated": "2026-07-16T06:03:39.287Z",
+  "threshold": 5,
+  "source": "集思录封闭基金API(NAV) + 腾讯nav81(≈集思录T-1净值)",
+  "summary": {
+    "qdii": 5,
+    "lof": 4,
+    "closed": 13,
+    "total": 22
+  },
+  "qdii": [
+    {
+      "code": "501225",
+      "name": "全球芯片LOF",
+      "type": "QDII",
+      "price": 3.987,
+      "nav": 3.3554,
+      "premium": "18.82%",
+      "change": "-4.73",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sh501225"
+    },
+    {
+      "code": "161226",
+      "name": "国投白银LOF",
+      "type": "QDII",
+      "price": 1.815,
+      "nav": 1.6289,
+      "premium": "11.42%",
+      "change": "-1.25",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sz161226"
+    },
+    {
+      "code": "161129",
+      "name": "易方达原油A类人民币",
+      "type": "QDII",
+      "price": 1.748,
+      "nav": 1.5886,
+      "premium": "10.03%",
+      "change": "-5.51",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sz161129"
+    },
+    {
+      "code": "501018",
+      "name": "南方原油LOF",
+      "type": "QDII",
+      "price": 1.833,
+      "nav": 1.6666,
+      "premium": "9.98%",
+      "change": "-4.08",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sh501018"
+    },
+    {
+      "code": "160723",
+      "name": "嘉实原油(QDII-LOF)",
+      "type": "QDII",
+      "price": 2.037,
+      "nav": 1.9058,
+      "premium": "6.88%",
+      "change": "-4.63",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sz160723"
+    }
+  ],
+  "lof": [
+    {
+      "code": "163003",
+      "name": "长信利鑫LOF",
+      "type": "国内LOF",
+      "price": 0.759,
+      "nav": 0.6701,
+      "premium": "13.27%",
+      "change": "10.00",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sz163003"
+    },
+    {
+      "code": "160324",
+      "name": "华夏磐晟LOF",
+      "type": "国内LOF",
+      "price": 3.268,
+      "nav": 3.4404,
+      "premium": "-5.01%",
+      "change": "-2.54",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sz160324"
+    },
+    {
+      "code": "501200",
+      "name": "科创加银LOF",
+      "type": "国内LOF",
+      "price": 1.55,
+      "nav": 1.645,
+      "premium": "-5.78%",
+      "change": "-3.55",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sh501200"
+    },
+    {
+      "code": "501096",
+      "name": "国联安科创LOF",
+      "type": "国内LOF",
+      "price": 1.741,
+      "nav": 1.8876,
+      "premium": "-7.77%",
+      "change": "-6.70",
+      "source": "腾讯nav81(≈集思录T-1净值)",
+      "market": "sh501096"
+    }
+  ],
+  "closed": [
+    {
+      "code": "501046",
+      "name": "财通福鑫定开混合",
+      "type": "封闭基金",
+      "price": 11.888,
+      "nav": 10.1701,
+      "premium": "16.89%",
+      "change": "-9.11",
+      "source": "集思录封闭API",
+      "market": "sh501046"
+    },
+    {
+      "code": "161837",
+      "name": "银华大盘定开",
+      "type": "封闭基金",
+      "price": 1.183,
+      "nav": 1.246,
+      "premium": "-5.06%",
+      "change": "-1.00",
+      "source": "集思录封闭API",
+      "market": "sz161837"
+    },
+    {
+      "code": "161040",
+      "name": "创业富国定开",
+      "type": "封闭基金",
+      "price": 2.371,
+      "nav": 2.5027,
+      "premium": "-5.26%",
+      "change": "-2.55",
+      "source": "集思录封闭API",
+      "market": "sz161040"
+    },
+    {
+      "code": "160529",
+      "name": "创业板博时定开",
+      "type": "封闭基金",
+      "price": 1.533,
+      "nav": 1.6242,
+      "premium": "-5.62%",
+      "change": "-2.85",
+      "source": "集思录封闭API",
+      "market": "sz160529"
+    },
+    {
+      "code": "166025",
+      "name": "中欧远见定开",
+      "type": "封闭基金",
+      "price": 0.653,
+      "nav": 0.6959,
+      "premium": "-6.16%",
+      "change": "0.15",
+      "source": "集思录封闭API",
+      "market": "sz166025"
+    },
+    {
+      "code": "160143",
+      "name": "创业板定开南方",
+      "type": "封闭基金",
+      "price": 1.723,
+      "nav": 1.838,
+      "premium": "-6.26%",
+      "change": "-2.87",
+      "source": "集思录封闭API",
+      "market": "sz160143"
+    },
+    {
+      "code": "501093",
+      "name": "华夏翔阳LOF",
+      "type": "封闭基金",
+      "price": 1.105,
+      "nav": 1.1793,
+      "premium": "-6.30%",
+      "change": "1.94",
+      "source": "集思录封闭API",
+      "market": "sh501093"
+    },
+    {
+      "code": "162720",
+      "name": "广发创业板定开",
+      "type": "封闭基金",
+      "price": 1.35,
+      "nav": 1.4483,
+      "premium": "-6.79%",
+      "change": "-3.71",
+      "source": "集思录封闭API",
+      "market": "sz162720"
+    },
+    {
+      "code": "161914",
+      "name": "创业板2年定开",
+      "type": "封闭基金",
+      "price": 0.869,
+      "nav": 0.9351,
+      "premium": "-7.07%",
+      "change": "-2.25",
+      "source": "集思录封闭API",
+      "market": "sz161914"
+    },
+    {
+      "code": "501065",
+      "name": "经典成长",
+      "type": "封闭基金",
+      "price": 1.225,
+      "nav": 1.3206,
+      "premium": "-7.24%",
+      "change": "0.00",
+      "source": "集思录封闭API",
+      "market": "sh501065"
+    },
+    {
+      "code": "501070",
+      "name": "广发睿阳",
+      "type": "封闭基金",
+      "price": 1.18,
+      "nav": 1.288,
+      "premium": "-8.39%",
+      "change": "-1.26",
+      "source": "集思录封闭API",
+      "market": "sh501070"
+    },
+    {
+      "code": "501062",
+      "name": "南方瑞合LOF",
+      "type": "封闭基金",
+      "price": 2.09,
+      "nav": 2.2849,
+      "premium": "-8.53%",
+      "change": "-3.11",
+      "source": "集思录封闭API",
+      "market": "sh501062"
+    },
+    {
+      "code": "501088",
+      "name": "嘉实瑞虹",
+      "type": "封闭基金",
+      "price": 0.755,
+      "nav": 0.8261,
+      "premium": "-8.61%",
+      "change": "0.00",
+      "source": "集思录封闭API",
+      "market": "sh501088"
+    }
+  ],
+  "indices": [
+    {
+      "code": "usIXIC",
+      "name": "纳斯达克综合",
+      "market": "美国",
+      "price": 26269.23,
+      "change": "0.62"
+    },
+    {
+      "code": "usDJI",
+      "name": "道琼斯工业",
+      "market": "美国",
+      "price": 52658.64,
+      "change": "0.29"
+    },
+    {
+      "code": "usNDX",
+      "name": "纳斯达克100",
+      "market": "美国",
+      "price": 29502.6,
+      "change": "-0.28"
+    },
+    {
+      "code": "hkHSI",
+      "name": "恒生指数",
+      "market": "香港",
+      "price": 25153.84,
+      "change": "1.92"
+    },
+    {
+      "code": "hkHSCEI",
+      "name": "恒生国企指数",
+      "market": "香港",
+      "price": 8370.66,
+      "change": "2.28"
+    }
+  ]
+}
